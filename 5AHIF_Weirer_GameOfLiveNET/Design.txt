@@ -1,0 +1,35 @@
+﻿---------------------Aufbau:---------------------
+
+Das Spielfeld wird in form einer Panel-Liste gespeichert, 
+jedes Panel erhält eine onclick methode die das Feld belebt/tötet, 
+wenn die simulation gerade nicht läuft.
+
+Die anzahl der aktuell lebenden Zellen wird als int gespeichert 
+und mithilfe einer public int hilfsvariable wird das label mit der anzahl der lebenden zellen und der int wert verändert.
+
+---------------------Simulation:---------------------
+
+Farbliste für jedes Feld wird erstellt in welchem enthalten ist welche Farbe jedes Feld hat
+neue tot/lebend informationen zu jedem Feld wir in bool[] gespeichert
+
+scheife:
+überprüfung der anzahl der nachbarn: schauen an welchen rändern die aktuelle Zelle sich befindet und anhand der Position nur die echten nachbarfelder überprüfen
+
+if(aktuelle Zelle.above.exists)
+	if(aktuelle Zelle.below.exists)
+		if(aktuelle Zelle.left.exists)
+			überprüfungen für alle zellen, die darunter/darüber und/oder links davon sind
+		if(aktuelle Zelle.right.exists)
+			überprüfungen für alle zellen, die darunter/darüber und/oder rechts davon sind
+	else
+		if(aktuelle Zelle.left.exists)
+			überprüfungen für alle zellen, die darüber und/oder links davon sind
+		if(aktuelle Zelle.right.exists)
+			überprüfungen für alle zellen, die darüber und/oder rechts davon sind
+else
+	if(aktuelle Zelle.left.exists)
+		überprüfungen für alle zellen, die darunter und/oder links davon sind
+	if(aktuelle Zelle.right.exists)
+		überprüfungen für alle zellen, die darunter und/oder rechts davon sind
+
+Spielfeld wir aktualisiert
